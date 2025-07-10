@@ -1,8 +1,10 @@
 function App() {
+  let name = 'Nilesh';
   return (
-    <div className="App">
-      <h1>Welcome React</h1>
-    </div>
+    <>
+      <h1>Welcome React {name}</h1>
+      <h2>Hi</h2>
+    </>
   );
 }
 
