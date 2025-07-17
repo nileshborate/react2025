@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import List from './List';
 function App() {
   const [item, setItem] = useState('');
   const [list, setList] = useState([]);
@@ -16,6 +17,14 @@ function App() {
     setItem('');
   };
 
+  const deleteItem = (id) => {
+    console.log('delete Item : ', id);
+    setList((oldItems) => {
+      return oldItems.filter((val, index) => {
+        return index !== id;
+      });
+    });
+  };
   return (
     <>
       <div className="main-div">
@@ -32,7 +41,9 @@ function App() {
           <button onClick={addItem}>+</button>
           <ol>
             {list.map((val, index) => {
-              return <li key={index}>{val}</li>;
+              return (
+                <List key={index} text={val} delete={deleteItem} id={index} />
+              );
             })}
           </ol>
         </div>
