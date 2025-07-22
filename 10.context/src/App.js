@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <div>App Component</div>
-      <FirstName.Provider value={'Rahul'}>
-        <LastName.Provider value={'Sharma'}>
+      <FirstName.Provider value={'Nilesh'}>
+        <LastName.Provider value={'B'}>
           <CompA />
         </LastName.Provider>
       </FirstName.Provider>
