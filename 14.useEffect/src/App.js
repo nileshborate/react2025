@@ -12,9 +12,10 @@ function App() {
     setNum2(num2 + 1);
   };
 
+  //render first time when page is load.
   useEffect(() => {
     console.log('useEffect');
-  });
+  }, []);
   return (
     <>
       <button onClick={btnEvent1}>Click Me {num1}</button>
