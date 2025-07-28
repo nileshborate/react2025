@@ -1,25 +1,27 @@
 import { useEffect, useState } from 'react';
 
 function App() {
-  const [num1, setNum1] = useState(0);
-  const [num2, setNum2] = useState(0);
+  const [users, setUsers] = useState([]);
 
-  const btnEvent1 = () => {
-    setNum1(num1 + 1);
+  const fetchData = async () => {
+    const api = 'https://jsonplaceholder.typicode.com/users';
+    const response = await fetch(api);
+    const data = await response.json();
+    console.log('Result = ', data);
+    setUsers(data);
   };
-
-  const btnEvent2 = () => {
-    setNum2(num2 + 1);
-  };
-
-  //render first time and call when num2 is changed.
+  //call only once, when page is render
   useEffect(() => {
-    console.log('useEffect');
-  }, [num2]);
+    fetchData();
+  }, []);
   return (
     <>
-      <button onClick={btnEvent1}>Click Me {num1}</button>
-      <button onClick={btnEvent2}>Click Me {num2}</button>
+      <h1>Hello</h1>
+      <ul>
+        {users.map((obj, index) => (
+          <li key={index}>{obj.name}</li>
+        ))}
+      </ul>
     </>
   );
 }
