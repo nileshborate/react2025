@@ -1,7 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+  const buttonClick = () => {
+    navigate('/user-details');
+  };
   return (
     <div>
       <nav
@@ -16,6 +20,9 @@ const Home = () => {
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
       </nav>
+
+      <h1>Hello</h1>
+      <button onClick={buttonClick}>Go to User Detail</button>
     </div>
   );
 };
