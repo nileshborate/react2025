@@ -3,8 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const navigate = useNavigate();
+  const person = {
+    id: 10,
+    name: 'Nilesh',
+  };
   const buttonClick = () => {
-    navigate('/user-details');
+    navigate('/user-details', { state: { person } });
   };
   return (
     <div>
