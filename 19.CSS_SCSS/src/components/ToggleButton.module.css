@@ -1,0 +1,8 @@
+.activeBtn {
+  background: green;
+  color: white;
+}
+.inactiveBtn {
+  background: gray;
+  color: black;
+}
