@@ -67,3 +67,6 @@
 
 /23.useCallback/package-lock.json
 /23.useCallback/node_modules
+
+/24.useReducer/package-lock.json
+/24.useReducer/node_modules
