@@ -1,10 +1,22 @@
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Login from './pages/Login';
+import Items from './pages/Items';
+import ProtectedRoute from './components/ProtectedRoutes';
+
 function App() {
-  let name = 'Nilesh';
   return (
-    <>
-      <h1>Welcome React {name}</h1>
-      <h2>Hi</h2>
-    </>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route
+        path="/"
+        element={
+          <ProtectedRoute>
+            <Items />
+          </ProtectedRoute>
+        }
+      />
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
   );
 }
 
